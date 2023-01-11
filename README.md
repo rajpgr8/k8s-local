@@ -36,17 +36,6 @@ k3d cluster delete mycluster
 Ref: https://k3d.io/v5.4.6/usage/exposing_services/
 ```
 
-##### Deploy nginxdemo app with ingress:
-```
-Deploy:
-kubectl apply -f nginxdemo.yaml
-
-Test:
-http://127.0.0.1:8080/
-```
-##### Output
-![image](https://user-images.githubusercontent.com/23621486/211861480-e49395a2-65cb-4f5d-bb4b-61526979552c.png)
-
 ##### Install important K8s related tools
 ```
 kubectl top node
@@ -68,4 +57,13 @@ $ watch -c kubectl get pod,svc,deploy
 
 Ref: https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
 ```
+##### Deploy nginxdemo app with ingress:
+```
+Deploy:
+kubectl apply -f nginxdemo.yaml
 
+Test:
+http://127.0.0.1:8080/
+```
+##### Output
+![image](https://user-images.githubusercontent.com/23621486/211861480-e49395a2-65cb-4f5d-bb4b-61526979552c.png)
