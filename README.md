@@ -53,14 +53,19 @@ Ref: https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
 ```
 ##### Important kubectl commands
 ```
-kubectl top node
-kubectl top pod --containers
-
 kubectl get events
 watch -c kubectl get pod,svc,deploy,ingress
 
 kubectl get pod -o wide
 kubectl describe pod <pod name>
-kubectl logs -f <pod name> -c <Cointer Name>
+kubectl logs -f <pod name> -c <container Name>
 kubectl exec -it <pod name> -- /bin/bash
+
+kubectl top pod --containers
+kubectl top node
+kubectl get nodes -o=jsonpath='{.items[*].metadata.name}'
+kubectl get nodes -o=jsonpath='{.items[*].status.capacity.cpu}'
+kubectl get nodes -o=jsonpath='{.items[*].status.nodeInfo.architecture}{.items[*].status.capacity.cpu}'
+kubectl get nodes -o=jsonpath='{.items[*].status.nodeInfo.architecture}{"\n"}{.items[*].status.capacity.cpu}'
+kubectl get nodes -o=custom-columns=NODE:.metadata.name,CPU:.status.capacity.cpu 
 ```
