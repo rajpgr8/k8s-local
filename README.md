@@ -32,3 +32,10 @@ http://127.0.0.1:8080/
 ##### Output
 ![image](https://user-images.githubusercontent.com/23621486/211861480-e49395a2-65cb-4f5d-bb4b-61526979552c.png)
 
+
+##### Important K8s related tools
+```
+kubectl
+kubectx
+kubens
+```
