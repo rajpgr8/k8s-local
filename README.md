@@ -1,6 +1,19 @@
 # k8s-local
 Local K8S development using K3d
 
+##### Install important K8s related tools
+```
+kubectl  
+kubectx + kubens
+
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+
+Ref: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
+Ref: https://github.com/ahmetb/kubectx
+```
+
 ##### Install K3d
 ```
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
@@ -33,9 +46,3 @@ http://127.0.0.1:8080/
 ![image](https://user-images.githubusercontent.com/23621486/211861480-e49395a2-65cb-4f5d-bb4b-61526979552c.png)
 
 
-##### Important K8s related tools
-```
-kubectl
-kubectx
-kubens
-```
