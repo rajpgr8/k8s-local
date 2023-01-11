@@ -15,14 +15,12 @@ Ref: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 Ref: https://github.com/ahmetb/kubectx
 Ref: https://helm.sh/docs/intro/install/
 ```
-
 ##### Install K3d
 ```
 curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 
 Ref: https://k3d.io/v5.4.6/
 ```
-
 ##### Create/Delete cluster:
 ```
 k3d cluster create mycluster
@@ -35,8 +33,14 @@ k3d cluster delete mycluster
 
 Ref: https://k3d.io/v5.4.6/usage/exposing_services/
 ```
+##### Install IMP open source tools: ArgoCD
+```
+$ helm upgrade --install argocd ./argocd_chart/
+$ watch -c kubectl get pod,svc,deploy
 
-##### Install important K8s related tools
+Ref: https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+```
+##### Important kubectl commands
 ```
 kubectl top node
 kubectl top pod --containers
@@ -48,14 +52,6 @@ kubectl get pod -o wide
 kubectl describe pod <pod name>
 kubectl logs -f <pod name> -c <Cointer Name>
 kubectl exec -it <pod name> -- /bin/bash
-```
-
-##### Install IMP open source tools: ArgoCD
-```
-$ helm upgrade --install argocd ./argocd_chart/
-$ watch -c kubectl get pod,svc,deploy
-
-Ref: https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
 ```
 ##### Deploy nginxdemo app with ingress:
 ```
