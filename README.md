@@ -3,8 +3,8 @@ Local K8S development using K3d
 
 ##### Install important K8s related tools
 ```
-kubectl  
-kubectx + kubens
+1. kubectl  
+2. kubectx + kubens
 
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
