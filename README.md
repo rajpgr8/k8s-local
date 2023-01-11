@@ -5,6 +5,7 @@ Local K8S development using K3d
 ```
 1. kubectl  
 2. kubectx + kubens
+3. helm
 
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
@@ -12,6 +13,7 @@ sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
 
 Ref: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 Ref: https://github.com/ahmetb/kubectx
+Ref: https://helm.sh/docs/intro/install/
 ```
 
 ##### Install K3d
@@ -45,4 +47,25 @@ http://127.0.0.1:8080/
 ##### Output
 ![image](https://user-images.githubusercontent.com/23621486/211861480-e49395a2-65cb-4f5d-bb4b-61526979552c.png)
 
+##### Install important K8s related tools
+```
+kubectl top node
+kubectl top pod --containers
+
+kubectl get events
+watch -c kubectl get pod,svc,deploy,ingress
+
+kubectl get pod -o wide
+kubectl describe pod <pod name>
+kubectl logs -f <pod name> -c <Cointer Name>
+kubectl exec -it <pod name> -- /bin/bash
+```
+
+##### Install IMP open source tools: ArgoCD
+```
+$ helm upgrade --install argocd ./argocd_chart/
+$ watch -c kubectl get pod,svc,deploy
+
+Ref: https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
+```
 
