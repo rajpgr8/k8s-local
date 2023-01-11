@@ -16,7 +16,7 @@ Ref: https://k3d.io/v5.4.6/usage/exposing_services/
 ##### Deploy nginx app with ingress:
 ```
 Deploy:
-kubectl apply -f ingress.yaml
+kubectl apply -f nginxdemo.yaml
 
 Test:
 http://127.0.0.1:8080/
