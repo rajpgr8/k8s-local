@@ -1,7 +1,6 @@
-# k8s-local
-Local K8S development using K3d
+### Local K8S development using K3d
 
-##### Install important K8s related tools
+##### Install K8s related tools
 ```
 1. kubectl  
 2. kubectx + kubens
@@ -44,7 +43,7 @@ http://127.0.0.1:8080/
 ##### Output
 ![image](https://user-images.githubusercontent.com/23621486/211861480-e49395a2-65cb-4f5d-bb4b-61526979552c.png)
 
-##### Install ArgoCD
+##### Install ArgoCD (Optional)
 ```
 $ helm upgrade --install argocd ./argocd_chart/
 $ watch -c kubectl get pod,svc,deploy
