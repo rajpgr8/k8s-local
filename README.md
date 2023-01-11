@@ -20,6 +20,8 @@ k3d cluster delete mycluster
 
 Ref: https://k3d.io/v5.4.6/usage/exposing_services/
 ```
+![image](https://user-images.githubusercontent.com/23621486/211862455-c13cae06-2b7d-4bad-b9f7-0c579da00b34.png)
+
 ##### Deploy nginxdemo app with ingress:
 ```
 Deploy:
