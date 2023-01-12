@@ -52,6 +52,18 @@ Ref: https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
 ```
 ##### Important kubectl commands
 ```
+kubectl get: Retrieve information about resources in a cluster.
+kubectl describe: Show detailed information about a specific resource.
+kubectl create: Create a new resource from a file or from stdin.
+kubectl apply: Update an existing resource or create it if it doesn't exist.
+kubectl delete: Delete a specific resource or a collection of resources.
+kubectl logs: Print the logs for a container in a pod.
+kubectl exec: Execute a command in a container.
+kubectl scale: Scale the number of replicas of a resource.
+kubectl rolling-update: Perform a rolling update of the pods in a deployment.
+kubectl port-forward: Forward one or more local ports to a pod.
+-------
+
 kubectl get events
 watch -c kubectl get pod,svc,deploy,ingress
 
