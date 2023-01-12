@@ -80,3 +80,23 @@ kubectl get nodes -o=jsonpath='{.items[*].status.nodeInfo.architecture}{.items[*
 kubectl get nodes -o=jsonpath='{.items[*].status.nodeInfo.architecture}{"\n"}{.items[*].status.capacity.cpu}'
 kubectl get nodes -o=custom-columns=NODE:.metadata.name,CPU:.status.capacity.cpu 
 ```
+##### Important helm commands
+```
+helm install: Install a chart (a package of pre-configured Kubernetes resources) to a cluster.
+helm list: List all of the releases (installed charts) in a cluster.
+helm upgrade: Upgrade a release to a new version of a chart.
+helm delete: Uninstall a release and delete the associated resources.
+helm search: Search for charts in a chart repository.
+helm repo: Add, list, remove, update, and index chart repositories.
+helm show: Show the details of a chart.
+helm template: Generate the resource manifest file from chart templates.
+helm history: Show the revision history of a release.
+helm rollback: Rollback a release to a previous revision.
+----
+
+helm upgrade --install argocd ./argocd_chart/
+
+helm dependency update
+helm template . --values values.yaml | less
+helm template . --values values.yaml --show-only templates/deployment.yaml | less
+```
