@@ -43,6 +43,29 @@ http://127.0.0.1:8080/
 ##### Output
 ![image](https://user-images.githubusercontent.com/23621486/211861480-e49395a2-65cb-4f5d-bb4b-61526979552c.png)
 
+##### Create a local registry
+```
+$ k3d registry create myregistry.localhost --port 12345
+INFO[0000] Creating node 'k3d-myregistry.localhost'     
+INFO[0002] Pulling image 'docker.io/library/registry:2' 
+INFO[0005] Successfully created registry 'k3d-myregistry.localhost' 
+INFO[0005] Starting Node 'k3d-myregistry.localhost'     
+INFO[0006] Successfully created registry 'k3d-myregistry.localhost' 
+# You can now use the registry like this (example):
+# 1. create a new cluster that uses this registry
+k3d cluster create --registry-use k3d-myregistry.localhost:12345
+
+# 2. tag an existing local image to be pushed to the registry  (OR can doenload image first docker pull nginx)
+docker tag nginx:latest k3d-myregistry.localhost:12345/mynginx:v0.1
+
+# 3. push that image to the registry
+docker push k3d-myregistry.localhost:12345/mynginx:v0.1
+
+# 4. run a pod that uses this image
+kubectl run mynginx --image k3d-myregistry.localhost:12345/mynginx:v0.1
+
+```
+
 ##### Install ArgoCD (Optional)
 ```
 $ helm upgrade --install argocd ./argocd_chart/
