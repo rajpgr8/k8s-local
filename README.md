@@ -68,8 +68,13 @@ kubectl run mynginx --image k3d-myregistry.localhost:12345/mynginx:v0.1
 
 ##### Install ArgoCD (Optional)
 ```
-$ helm upgrade --install argocd ./argocd_chart/
-$ watch -c kubectl get pod,svc,deploy
+helm repo add argo https://argoproj.github.io/argo-helm
+helm install my-argo-cd argo/argo-cd --version 5.26.0 --dry-run
+helm pull argo/argo-cd --version 5.26.0 --untar --untardir argocd_chart
+helm template --validate argo/argo-cd/
+
+helm upgrade --install argocd ./argocd_chart/
+watch -c kubectl get pod,svc,deploy
 
 Ref: https://github.com/argoproj/argo-helm/tree/main/charts/argo-cd
 ```
