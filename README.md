@@ -32,6 +32,27 @@ k3d cluster delete mycluster
 
 Ref: https://k3d.io/v5.4.6/usage/exposing_services/
 ```
+
+##### Create cluster with local conatner repository:
+```
+sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
+sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
+sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
+curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+k3d registry create mycluster-registry --port 5000
+k3d cluster create mycluster --registry-use mycluster-registry:5000
+
+=>Add following entry in /etc/hosts file
+127.0.0.1 k3d-mycluster-registry
+
+=>Test:
+docker pull nginx
+docker tag nginx:latest k3d-mycluster-registry:5000/mynginx:v0.1
+docker push k3d-mycluster-registry:5000/mynginx:v0.1
+kubectl run mynginx --image k3d-mycluster-registry:5000/mynginx:v0.1
+kubens
+```
+
 ##### Deploy nginxdemo app with ingress:
 ```
 Deploy:
