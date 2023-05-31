@@ -33,7 +33,7 @@ k3d cluster delete mycluster
 Ref: https://k3d.io/v5.4.6/usage/exposing_services/
 ```
 
-##### Create cluster with local conatner repository:
+##### Create cluster with local container repository:
 ```
 sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
 sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
