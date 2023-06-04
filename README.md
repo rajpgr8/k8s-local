@@ -35,10 +35,6 @@ Ref: https://k3d.io/v5.4.6/usage/exposing_services/
 
 ##### Create cluster with local container registry:
 ```
-sudo git clone https://github.com/ahmetb/kubectx /opt/kubectx
-sudo ln -s /opt/kubectx/kubectx /usr/local/bin/kubectx
-sudo ln -s /opt/kubectx/kubens /usr/local/bin/kubens
-curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 k3d registry create mycluster-registry --port 5000
 k3d cluster create mycluster --registry-use mycluster-registry:5000
 
