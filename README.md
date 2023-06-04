@@ -1,5 +1,12 @@
 ### Local K8S development using K3d
 
+##### Install K3d
+```
+curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
+
+Ref: https://k3d.io/v5.4.6/
+```
+
 ##### Install K8s related tools
 ```
 1. kubectl  
@@ -14,12 +21,7 @@ Ref: https://kubernetes.io/docs/tasks/tools/install-kubectl-linux/
 Ref: https://github.com/ahmetb/kubectx
 Ref: https://helm.sh/docs/intro/install/
 ```
-##### Install K3d
-```
-curl -s https://raw.githubusercontent.com/k3d-io/k3d/main/install.sh | bash
 
-Ref: https://k3d.io/v5.4.6/
-```
 ##### Create/Delete cluster:
 ```
 k3d cluster create mycluster
