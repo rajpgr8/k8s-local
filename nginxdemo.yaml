@@ -55,7 +55,7 @@ spec:
             port:
               number: 80
               
-### Emaple Ingress code : Path based routing          
+### Path based routing          
 #apiVersion: networking.k8s.io/v1
 #kind: Ingress
 #metadata:
@@ -85,7 +85,7 @@ spec:
 
 
 
-### Emaple Ingress code : Domain based routing 
+### Domain based routing 
 #apiVersion: networking.k8s.io/v1
 #kind: Ingress
 #metadata:
