@@ -35,7 +35,7 @@ k3d cluster delete mycluster
 Ref: https://k3d.io/v5.4.6/usage/exposing_services/
 ```
 
-##### Create cluster with local container registry:
+##### Create k3d cluster with local container registry:
 ```
 k3d registry create mycluster-registry --port 5000
 k3d cluster create mycluster --registry-use mycluster-registry:5000
@@ -50,6 +50,11 @@ docker push k3d-mycluster-registry:5000/mynginx:v0.1
 kubectl run mynginx --image k3d-mycluster-registry:5000/mynginx:v0.1
 kubectl get pod
 kubens
+```
+
+##### Create kind cluster (alternative to k3d cluster)
+```
+kind create cluster --name webhook --image kindest/node:v1.28
 ```
 
 ##### Deploy nginxdemo app with ingress:
